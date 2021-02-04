@@ -1,0 +1,15 @@
+.mainContainer {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: beige;
+  padding: 35px 25px;
+}
+
+.HomeStuff-mainContainer {
+  display: flex;
+}
+
+.header {
+  text-align: center;
+}
