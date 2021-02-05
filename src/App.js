@@ -5,6 +5,8 @@ import Cart from "./components/Cart/Cart";
 import WishList from "./components/WishList/WishList";
 import About from "./components/About/About";
 import { makeStyles } from "@material-ui/core/styles";
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles'
 import {
   Drawer,
   List,
@@ -21,6 +23,14 @@ const useStyle = makeStyles((theme) => ({
   drawerPaper: { width: "inherit" },
   link: { textDecoration: "none", color: theme.palette.text.primary },
 }));
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
 export default function App() {
   const [cart, setCart] = useState([]);
   const addCart = ({ title, imageUrl, stuffExplanation }) => {
@@ -52,9 +62,11 @@ export default function App() {
             <List>
               <ListItem button>
                 <ListItemIcon>
+                <StyledBadge badgeContent={count} color="secondary">
                   <AddShoppingCartIcon />
+                  </StyledBadge>
                 </ListItemIcon>
-                <ListItemText primary={`Cart(${count})`} />
+                <ListItemText primary={Cart} />
               </ListItem>
             </List>
           </Link>
@@ -87,7 +99,7 @@ export default function App() {
             <About />
           </Route>
           <Route path="/cart">
-            <Cart />
+            <Cart cart= {cart}/>
           </Route>
           <Route path="/" exact>
             <Home addCart={addCart} />
