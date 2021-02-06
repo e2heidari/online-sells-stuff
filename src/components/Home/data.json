@@ -3,24 +3,28 @@
     "id": 1,
     "title": "Samsung Galaxy S20",
     "imageUrl": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s20-.jpg",
-    "stuffExplanation": "DISPLAY: 6.2inch 1440x3200 pixels \r\n MAIN CAMERA: 64MP \r\n RAM:8GB \r\n BATTERY: 4000mAh Li-Po"
+    "stuffExplanation": "DISPLAY: 6.2inch 1440x3200 pixels \r\n MAIN CAMERA: 64MP \r\n RAM:8GB \r\n BATTERY: 4000mAh Li-Po",
+    "price": "$ 644.99"
   },
   {
     "id": 2,
     "title": "Apple iPhone 12",
     "imageUrl": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg",
-    "stuffExplanation": "DISPLAY: 6.1inch 1170x2532 pixels \r\n MAIN CAMERA: 12MP \r\n RAM: 4GB \r\n BATTERY: 2815mAh Li-Ion"
+    "stuffExplanation": "DISPLAY: 6.1inch 1170x2532 pixels \r\n MAIN CAMERA: 12MP \r\n RAM: 4GB \r\n BATTERY: 2815mAh Li-Ion",
+    "price": "$ 799.00"
   },
   {
     "id": 3,
     "title": "Xiaomi Mi 10T 5G",
     "imageUrl": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi-10t-5g-.jpg",
-    "stuffExplanation": "DISPLAY: 6.67inch 1080x2400 pixels \r\n MAIN CAMERA: 64MP \r\n RAM: 6/8GB \r\n BATTERY: 5000mAh Li-Po"
+    "stuffExplanation": "DISPLAY: 6.67inch 1080x2400 pixels \r\n MAIN CAMERA: 64MP \r\n RAM: 6/8GB \r\n BATTERY: 5000mAh Li-Po",
+    "price": "C$ 499.00"
   },
   {
     "id": 4,
     "title": "Huawei Mate 40",
     "imageUrl": "https://fdn2.gsmarena.com/vv/bigpic/huawei-mate40-3.jpg",
-    "stuffExplanation": "DISPLAY: 6.5inch 1080x2376 pixels \r\n MAIN CAMERA: 50MP \r\n RAM: 8GB \r\n BATTERY: 4200mAh Li-Po"
+    "stuffExplanation": "DISPLAY: 6.5inch 1080x2376 pixels \r\n MAIN CAMERA: 50MP \r\n RAM: 8GB \r\n BATTERY: 4200mAh Li-Po",
+    "price": "C$ 1089.99"
   }
 ]

@@ -33,8 +33,8 @@ const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 export default function App() {
   const [cart, setCart] = useState([]);
-  const addCart = ({ title, imageUrl, stuffExplanation }) => {
-    setCart([...cart, { title, imageUrl, stuffExplanation }]);
+  const addCart = ({ title, imageUrl, stuffExplanation, price }) => {
+    setCart([...cart, { title, imageUrl, stuffExplanation, price }]);
   };
   const count = cart.length;
   const classes = useStyle();
@@ -48,7 +48,7 @@ export default function App() {
           open={true}
           classes={{ paper: classes.drawerPaper }}
         >
-          <Link to="/" state={cart} className={classes.link}>
+          <Link to="/" className={classes.link}>
             <List>
               <ListItem button>
                 <ListItemIcon>
@@ -66,7 +66,7 @@ export default function App() {
                   <AddShoppingCartIcon />
                   </StyledBadge>
                 </ListItemIcon>
-                <ListItemText primary={Cart} />
+                <ListItemText primary="Cart" />
               </ListItem>
             </List>
           </Link>
@@ -99,7 +99,7 @@ export default function App() {
             <About />
           </Route>
           <Route path="/cart">
-            <Cart cart= {cart}/>
+            <Cart {...cart} />
           </Route>
           <Route path="/" exact>
             <Home addCart={addCart} />
