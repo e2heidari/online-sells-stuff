@@ -33,8 +33,15 @@ const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 export default function App() {
   const [cart, setCart] = useState([]);
-  const addCart = ({ title, imageUrl, stuffExplanation, price }) => {
-    setCart([...cart, { title, imageUrl, stuffExplanation, price }]);
+  console.log(cart)
+  const addCart = ({id, title, imageUrl, stuffExplanation, price, index }) => {
+    const newCart =[...cart, {id, title, imageUrl, stuffExplanation, price, index }]
+    setCart(newCart);
+  };
+  const removeStuff =(index)=>{
+    const newCart = [...cart]
+    newCart.splice(index, 1)
+    setCart(newCart)
   };
   const count = cart.length;
   const classes = useStyle();
@@ -99,7 +106,7 @@ export default function App() {
             <About />
           </Route>
           <Route path="/cart">
-            <Cart {...cart} />
+            <Cart cart={cart} removeStuff={removeStuff} />
           </Route>
           <Route path="/" exact>
             <Home addCart={addCart} />

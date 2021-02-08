@@ -4,8 +4,8 @@ import stuffData from "./data.json";
 import "./Home.css";
 
 function Home({ addCart }) {
-  const components = stuffData.map((data) => (
-    <HomeStuff key={data.id} {...data} addCart={addCart} />
+  const components = stuffData.map((data, index) => (
+    <HomeStuff key={data.id} {...data} index={index} addCart={addCart} />
   ));
   return (
     <div className="mainContainer">

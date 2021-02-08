@@ -2,15 +2,15 @@ import React from "react";
 import "./Cart.css"
 import CartStuff from "./CartStuff"
 
-function Cart(props) {
-    const cartstuff = Object.values(props).map((myStuff) => (
-      <CartStuff key={myStuff.id} {...myStuff} />
-    ));;
-    console.log(cartstuff)
+function Cart({removeStuff, cart} ) {
+    const cartStuff = cart.map((myStuff, index) => (
+      <CartStuff key={myStuff.id} index={index} {...myStuff} removeStuff={removeStuff} />
+    ));
+    console.log(cartStuff)
     return (
       <div className="mainContainer">
-        <h1 className="header">Your stuffs in cart</h1>
-        {cartstuff}
+        <h1 className="header">Your stuff(s) in cart</h1>
+        {cartStuff}
       </div>
     );
   }
