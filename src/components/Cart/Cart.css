@@ -6,10 +6,16 @@
   padding: 35px 25px;
 }
 
-.HomeStuff-mainContainer {
+.cartStuffContainer {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .header {
   text-align: center;
+}
+.secondHeader1 {
+  margin: auto 50px;
+
 }

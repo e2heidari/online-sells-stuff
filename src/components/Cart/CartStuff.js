@@ -8,7 +8,7 @@ const CartStuff = ({id, title, imageUrl, stuffExplanation, price, index, removeS
     return (
       <div className="container">
         <h2 className="item-a">{title}</h2>
-        <img className="item-b" src={imageUrl} alt={title}></img>
+        <img className="item-b"  src={imageUrl} alt={title}></img>
         <h3 className="item-c">{stuffExplanation}</h3>
         {/* <img className="item-f" alt="Like"></img> */}
         <Button

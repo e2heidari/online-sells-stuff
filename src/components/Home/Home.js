@@ -10,7 +10,9 @@ function Home({ addCart }) {
   return (
     <div className="mainContainer">
       <h1 className="header">Add your stuffs in cart</h1>
+      <div className="stuffContainer">
       {components}
+      </div>
     </div>
   );
 }

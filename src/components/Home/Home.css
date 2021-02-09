@@ -6,8 +6,10 @@
   padding: 35px 25px;
 }
 
-.HomeStuff-mainContainer {
+.stuffContainer {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .header {

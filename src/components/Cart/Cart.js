@@ -9,8 +9,14 @@ function Cart({removeStuff, cart} ) {
     console.log(cartStuff)
     return (
       <div className="mainContainer">
-        <h1 className="header">Your stuff(s) in cart</h1>
+        <h1 className="header">SHOPING CART</h1>
+          <hr/>
+          <h1 className="secondHeader">My Cart</h1>
+          <hr/>
+          <div className="cartStuffContainer">
         {cartStuff}
+        </div>
+        
       </div>
     );
   }

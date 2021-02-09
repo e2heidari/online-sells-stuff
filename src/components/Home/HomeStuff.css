@@ -1,11 +1,13 @@
 .container {
   width: 420px;
   height: 350px;
+  border-radius: 10px;
   border: 2px solid black;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 225px 125px 70px;
   grid-template-rows: 80px 200px 70px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .item-a {
