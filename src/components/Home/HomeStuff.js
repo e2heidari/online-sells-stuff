@@ -2,7 +2,14 @@ import React from "react";
 import "./HomeStuff.css";
 import Button from "@material-ui/core/Button";
 
-const HomeStuff = ({id, title, imageUrl, stuffExplanation, price, index, addCart }) => {
+const HomeStuff = ({
+  id,
+  title,
+  imageUrl,
+  stuffExplanation,
+  price,
+  addCart,
+}) => {
   return (
     <div className="container">
       <h2 className="item-a">{title}</h2>
@@ -13,10 +20,13 @@ const HomeStuff = ({id, title, imageUrl, stuffExplanation, price, index, addCart
         className="item-d"
         variant="contained"
         color="primary"
-        onClick={() => addCart({id, title, imageUrl, stuffExplanation, price, index })}
+        onClick={() =>
+          addCart({ id, title, imageUrl, stuffExplanation, price })
+        }
       >
         Add to Cart
       </Button>
+      <h4 className="item-e">Price: ${price}</h4>
     </div>
   );
 };

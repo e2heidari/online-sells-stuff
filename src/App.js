@@ -5,8 +5,8 @@ import Cart from "./components/Cart/Cart";
 import WishList from "./components/WishList/WishList";
 import About from "./components/About/About";
 import { makeStyles } from "@material-ui/core/styles";
-import Badge from '@material-ui/core/Badge';
-import { withStyles } from '@material-ui/core/styles'
+import Badge from "@material-ui/core/Badge";
+import { withStyles } from "@material-ui/core/styles";
 import {
   Drawer,
   List,
@@ -28,21 +28,28 @@ const StyledBadge = withStyles((theme) => ({
     right: -3,
     top: 13,
     border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
+    padding: "0 4px",
   },
 }))(Badge);
 export default function App() {
   const [cart, setCart] = useState([]);
-  console.log(cart)
-  const addCart = ({id, title, imageUrl, stuffExplanation, price, index }) => {
-    const newCart =[...cart, {id, title, imageUrl, stuffExplanation, price, index }]
+  const [amount, setAmount] = useState(1);
+  const addCart = (props) => {
+    console.log(cart.map((object) => object.id));
+    if (props.id === Number(cart.map((object) => object.id))) {
+      setAmount(amount + 1);
+    } else {
+      setAmount(1);
+      const newCart = [...cart, props];
+      setCart(newCart);
+    }
+  };
+  const removeStuff = (index) => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
     setCart(newCart);
   };
-  const removeStuff =(index)=>{
-    const newCart = [...cart]
-    newCart.splice(index, 1)
-    setCart(newCart)
-  };
+
   const count = cart.length;
   const classes = useStyle();
   return (
@@ -69,8 +76,8 @@ export default function App() {
             <List>
               <ListItem button>
                 <ListItemIcon>
-                <StyledBadge badgeContent={count} color="secondary">
-                  <AddShoppingCartIcon />
+                  <StyledBadge badgeContent={count} color="secondary">
+                    <AddShoppingCartIcon />
                   </StyledBadge>
                 </ListItemIcon>
                 <ListItemText primary="Cart" />
@@ -106,7 +113,7 @@ export default function App() {
             <About />
           </Route>
           <Route path="/cart">
-            <Cart cart={cart} removeStuff={removeStuff} />
+            <Cart cart={cart} removeStuff={removeStuff} amount={amount} />
           </Route>
           <Route path="/" exact>
             <Home addCart={addCart} />
