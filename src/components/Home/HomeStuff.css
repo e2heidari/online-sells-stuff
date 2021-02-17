@@ -10,33 +10,33 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0 , 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
-.item-a {
+.item-aH {
   grid-column: 1 / span 3;
   grid-row: 1 / span 1;
   justify-self: center;
 }
 
-.item-b {
+.item-bH {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   justify-self: center;
 }
 
-.item-c {
+.item-cH {
   grid-column: 3 / span 1;
   grid-row: 2 / span 1;
   justify-self: center;
   padding: 5px;
 }
 
-.item-d {
+.item-dH {
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
   justify-self: center;
   align-self: center;
 }
 
-.item-e {
+.item-eH {
   grid-column: 3 / span 2;
   grid-row: 3 / span 1;
   justify-self: center;

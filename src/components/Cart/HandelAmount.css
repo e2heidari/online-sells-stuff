@@ -1,0 +1,8 @@
+.countContaner { 
+    flex-direction: column;
+    align-items: center;
+}
+  /* span {
+      display: inline-block;
+      margin: 0;
+  } */

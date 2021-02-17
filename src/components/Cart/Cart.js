@@ -2,14 +2,13 @@ import React from "react";
 import "./Cart.css";
 import CartStuff from "./CartStuff";
 
-function Cart({ removeStuff, cart, amount }) {
+function Cart({ removeStuff, cart }) {
   const cartStuff = cart.map((myStuff, index) => (
     <CartStuff
       key={myStuff.id}
       index={index}
       {...myStuff}
       removeStuff={removeStuff}
-      amount={amount}
     />
   ));
   const allPrice = cart.map((stuff) => Number(stuff.price));

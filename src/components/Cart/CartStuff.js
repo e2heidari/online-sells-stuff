@@ -1,6 +1,7 @@
 import React from "react";
 import "./CartStuff.css";
 import Button from "@material-ui/core/Button";
+import HandelAmount from "./HandelAmount";
 
 const CartStuff = ({
   id,
@@ -10,7 +11,6 @@ const CartStuff = ({
   price,
   index,
   removeStuff,
-  amount,
 }) => {
   console.log(title);
   return (
@@ -27,10 +27,8 @@ const CartStuff = ({
       >
         Remove from Cart
       </Button>
-      <h4 className="item-e">
-        Price:
-        {amount} X ${price}
-      </h4>
+      <h1 className="item-e">${price}</h1>
+      <HandelAmount price={price} />
     </div>
   );
 };
