@@ -1,20 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cart.css";
 import CartStuff from "./CartStuff";
+import { StuffContext } from "../../context/StuffContext";
 
-function Cart({ removeStuff, cart }) {
-  const cartStuff = cart.map((myStuff, index) => (
-    <CartStuff
-      key={myStuff.id}
-      index={index}
-      {...myStuff}
-      removeStuff={removeStuff}
-    />
+function Cart() {
+  const x = useContext(StuffContext);
+  console.log(x);
+  const { state } = x;
+  const cartStuff = state.cart.map((myStuff) => (
+    <CartStuff key={myStuff.id} myStuff={myStuff} />
   ));
-  const allPrice = cart.map((stuff) => Number(stuff.price));
-  const totalPrice = allPrice.reduce((a, b) => a + b, 0);
-  console.log(allPrice);
-
   return (
     <div className="mainContainer">
       <h1 className="header">SHOPING CART</h1>
@@ -23,7 +18,7 @@ function Cart({ removeStuff, cart }) {
       <hr />
       <div className="cartStuffContainer">{cartStuff}</div>
       <div className="footer">
-        <h2 className="totalPrice">total price: ${totalPrice}</h2>
+        <h2 className="totalPrice">total price: ${state.totalPrice}</h2>
       </div>
     </div>
   );

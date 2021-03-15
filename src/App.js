@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
@@ -31,19 +31,7 @@ const StyledBadge = withStyles((theme) => ({
     padding: "0 4px",
   },
 }))(Badge);
-export default function App() {
-  const [cart, setCart] = useState([]);
-  const addCart = (props) => {
-    const newCart = [...cart, props];
-    setCart(newCart);
-  };
-  const removeStuff = (index) => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
-  };
-
-  const count = cart.length;
+function App() {
   const classes = useStyle();
   return (
     <Router>
@@ -67,9 +55,9 @@ export default function App() {
           </Link>
           <Link to="cart" className={classes.link}>
             <List>
-              <ListItem button>
+              <ListItem button aria-label="cart">
                 <ListItemIcon>
-                  <StyledBadge badgeContent={count} color="secondary">
+                  <StyledBadge badgeContent={4} color="secondary">
                     <AddShoppingCartIcon />
                   </StyledBadge>
                 </ListItemIcon>
@@ -106,10 +94,10 @@ export default function App() {
             <About />
           </Route>
           <Route path="/cart">
-            <Cart cart={cart} removeStuff={removeStuff} />
+            <Cart />
           </Route>
           <Route path="/" exact>
-            <Home addCart={addCart} />
+            <Home />
           </Route>
           <Route path="/wish">
             <WishList />
@@ -119,3 +107,5 @@ export default function App() {
     </Router>
   );
 }
+
+export default App;

@@ -1,11 +1,11 @@
 import React from "react";
-import HomeStuff from "./HomeStuff.js";
+import HomeStuff from "./HomeStuff";
 import stuffData from "./data.json";
 import "./Home.css";
 
-function Home({ addCart }) {
+function Home() {
   const components = stuffData.map((data) => (
-    <HomeStuff key={data.id} {...data} addCart={addCart} />
+    <HomeStuff key={data.id} product={data} />
   ));
   return (
     <div className="mainContainer">
