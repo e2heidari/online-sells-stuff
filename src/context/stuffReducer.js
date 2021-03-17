@@ -47,6 +47,15 @@ export const stuffReducer = (state, action) => {
     case "HANDELCLICKDOWN":
       state.cart[state.cart.findIndex((item) => item.id === action.payload.id)]
         .quantity--;
+      if (
+        state.cart[
+          state.cart.findIndex((item) => item.id === action.payload.id)
+        ].quantity-- <= 0
+      ) {
+        state.cart[
+          state.cart.findIndex((item) => item.id === action.payload.id)
+        ].quantity = 1;
+      }
       return {
         ...state,
         ...sumItems(state.cart),

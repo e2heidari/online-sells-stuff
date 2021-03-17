@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import "./CartStuff.css";
 import Button from "@material-ui/core/Button";
 import HandelCounter from "./HandelCounter";
-import StuffContext from "../../context/StuffContext";
+import { StuffContext } from "../../context/StuffContext";
 
-const CartStuff = ({ myStuff }) => {
+const CartStuff = ({ myStuff, quantity }) => {
   const { removeStuff } = useContext(StuffContext);
-
   return (
     <div className="container">
       <h2 className="item-a">{myStuff.title}</h2>
@@ -22,7 +21,7 @@ const CartStuff = ({ myStuff }) => {
         Remove from myStuff
       </Button>
       <h1 className="item-e">${myStuff.price}</h1>
-      <HandelCounter key={myStuff.id} product={myStuff} />
+      <HandelCounter product={myStuff} quantity={quantity} />
       <div className="item-f"></div>
       {/* <h1 className="item-g">${withQuantityPrice}</h1> */}
     </div>

@@ -8,7 +8,7 @@ function Cart() {
   console.log(x);
   const { state } = x;
   const cartStuff = state.cart.map((myStuff) => (
-    <CartStuff key={myStuff.id} myStuff={myStuff} />
+    <CartStuff key={myStuff.id} myStuff={myStuff} quantity={myStuff.quantity} />
   ));
   return (
     <div className="mainContainer">

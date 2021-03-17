@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
@@ -18,6 +18,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import { StuffContext } from "./context/StuffContext";
 
 const useStyle = makeStyles((theme) => ({
   drawerPaper: { width: "inherit" },
@@ -33,6 +34,7 @@ const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 function App() {
   const classes = useStyle();
+  const { state } = useContext(StuffContext);
   return (
     <Router>
       <div style={{ display: "flex" }}>
@@ -57,7 +59,7 @@ function App() {
             <List>
               <ListItem button aria-label="cart">
                 <ListItemIcon>
-                  <StyledBadge badgeContent={4} color="secondary">
+                  <StyledBadge badgeContent={state.itemCount} color="secondary">
                     <AddShoppingCartIcon />
                   </StyledBadge>
                 </ListItemIcon>

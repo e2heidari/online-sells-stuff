@@ -5,16 +5,15 @@ import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import "./HandelAmount.css";
 import { StuffContext } from "../../context/StuffContext";
 
-const HandelCounter = ({ product }) => {
-  const { handelClickUp, handelClickDown, state } = useContext(StuffContext);
-
+const HandelCounter = ({ product, quantity }) => {
+  const { handelClickUp, handelClickDown } = useContext(StuffContext);
   return (
     <div>
       <span className="countContaner">
         <IconButton onClick={() => handelClickUp(product)}>
           <AddCircleOutlineIcon />
         </IconButton>
-        <input value={state.itemCount} size="4" />
+        <input value={quantity} size="4" />
         <IconButton onClick={() => handelClickDown(product)}>
           <RemoveCircleOutlineIcon />
         </IconButton>
